@@ -17,6 +17,9 @@ function getCookie(name) {
             }
         }
     }
+    if(name == 'csrftoken' && !cookieValue){
+        cookieValue = $('input[name="csrfmiddlewaretoken"]').first().val();
+    }
     return cookieValue;
 }
 
